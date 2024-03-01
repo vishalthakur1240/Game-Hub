@@ -21,6 +21,8 @@ export interface Game {
                 name: "PC"
                 slug: "pc"
     */
+    
+    metacritic: number;
 }
 interface FetchGameResponse {
     count: number;
