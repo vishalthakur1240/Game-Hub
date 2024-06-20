@@ -1,18 +1,18 @@
-import { Button, HStack, Heading, Image, List, ListItem, Spinner, Text } from '@chakra-ui/react';
+import { Button, HStack, Heading, Image, List, ListItem } from '@chakra-ui/react';
 import useGenres, { Genre } from '../hooks/useGenres'
 import getCroppedImageUrl from '../services/image-url';
-import GameListSkeleton from './GameListSkeleton';
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
   selectedGenre: Genre | null;
 }
 const GenreList = ({onSelectedGenre, selectedGenre}: Props) => {
-  const {datas, isLoading, error} = useGenres();
+  const {datas} = useGenres();
+  // const {datas, isLoading, error} = useGenres();
 
   // if(error) return null;
   // if(isLoading) return <Spinner/>;
-  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+  // const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
 
   return (
     <>

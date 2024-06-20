@@ -1,4 +1,3 @@
-import useDatas from "./useData";
 import genres from "../data/genres.ts";
 
 export interface Genre{
