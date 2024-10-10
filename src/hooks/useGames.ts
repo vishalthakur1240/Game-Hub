@@ -7,6 +7,16 @@ export interface Platform {
     slug: string;
 }
 
+export interface Screenshot {
+    id: number;
+    image: string;
+}
+
+interface ESBRRating {
+    id: number;
+    name: string;
+    
+}
 export interface Game {
     id: number;
     name: string;
@@ -21,10 +31,17 @@ export interface Game {
                 slug: "pc"
     */
 
-    metacritic: number;
+    metacritic: number | string;
     rating_top: number;
+    short_screenshots: Screenshot[];
+    rating: number;
+    playtime: number;
+    esrb_rating: ESBRRating;
+    released: string;
+    reviews_count: string;
+    updated: string;
+
 }
 
-const useGames = (gameQuery: GameQuery) => useDatas<Game>('/games', { params: { genres: gameQuery.genre?.id, platforms: gameQuery.platform?.id, ordering: gameQuery?.sortOrder, search: gameQuery.searchText } }, [gameQuery]);
-
+const useGames = (gameQuery: GameQuery, page: number) => useDatas<Game>('/games', { params: { genres: gameQuery.genre?.id, platforms: gameQuery.platform?.id, ordering: gameQuery?.sortOrder, search: gameQuery.searchText, page } }, [gameQuery, page]);
 export default useGames;

@@ -2,6 +2,36 @@ form {
   width: 100%;
 }
 
+/* Pagination CSS */
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination .page-item {
+  margin: 0 5px; /* Add gaps between buttons */
+}
+
+.pagination .page-item .page-link {
+  color: white;
+  background-color: #2d3748;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  border-radius: 0.25rem; /* Optional: add border-radius for rounded corners */
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: white;
+  color: #2d3748;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: white;
+  color: #2d3748;
+  border: none;
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
